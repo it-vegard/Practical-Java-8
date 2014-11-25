@@ -16,7 +16,7 @@ public class Task2 {
 		return null;
 	}
 	
-	public static String[] getTeamsInAlphabeticalOrder() {
+	public static Object[] getTeamsInAlphabeticalOrder() {
 		return null;
 	}
 
