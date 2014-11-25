@@ -1,21 +1,18 @@
 package no.itera.fagkveld.java8.tasks;
 
-import java.util.Optional;
-import java.util.OptionalDouble;
-
 import no.itera.fagkveld.java8.api.soccer.Team;
 
 public class Task2 {
 	
-	public static OptionalDouble getAverageNumberOfGoalsScoredInSeason() {
-		return null;
+	public static double getAverageNumberOfGoalsScoredInSeason() {
+		return Double.MIN_VALUE;
 	}
 	
 	public static int getTotalNumberOfGoalsScored() {
 		return Integer.MIN_VALUE;
 	}
 	
-	public static Optional<Team> getGoldWinner() {
+	public static Team getGoldWinner() {
 		return null;
 	}
 	
