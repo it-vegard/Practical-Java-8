@@ -1,4 +1,9 @@
-package no.itera.fagkveld.java8.tasks;
+package no.itera.fagkveld.java8.tasks.solution;
+
+import java.util.ArrayList;
+import java.util.stream.IntStream;
+
+import no.itera.fagkveld.java8.api.NumberUtils;
 
 public class Task1 {
 	
@@ -7,7 +12,9 @@ public class Task1 {
 	 * 
 	 */
 	public static int[] getIntegersDivisableBy(int divider, int max) {
-		return null;
+		return IntStream.range(0, max+1)
+				.filter(i -> i % divider == 0)
+				.toArray();
 	}
 	
 	/*
@@ -16,7 +23,9 @@ public class Task1 {
 	 * Hint: Use NumberUtils.isPrime to determine whether an integer is a prime number.
 	 */
 	public static int[] getPrimesAsArray(int min, int max) {
-		return null;
+		return IntStream.range(min, max+1)
+					.filter(i -> NumberUtils.isPrime(i))
+					.toArray();
 	}
 	
 	/*
@@ -24,7 +33,10 @@ public class Task1 {
 	 * Formula: x = n * Math.PI
 	 */
 	public static double[] getMultiplesOfPi(int min, int max) {
-		return null;
+		return IntStream.range(min, max+1)
+				.mapToDouble(d -> d)
+				.map(d -> d*Math.PI)
+				.toArray();
 	}
 	
 }
