@@ -21,7 +21,6 @@ public class Task1Test extends TestCase {
 		getPrimesAsArrayTest();
 		getIntegersDivisibleByTest();
 		getMultiplesOfPiTest();
-		getReversedStringsTest();
 	}
 	
 	public void getPrimesAsArrayTest() {
@@ -34,9 +33,5 @@ public class Task1Test extends TestCase {
 	
 	public void getMultiplesOfPiTest() {
 		assertTrue(Arrays.equals(new double[]{0.0, 3.141592653589793, 6.283185307179586, 9.42477796076938, 12.566370614359172, 15.707963267948966}, Task1.getMultiplesOfPi(0, 5)));
-	}
-	
-	public void getReversedStringsTest() {
-		
 	}
 }
