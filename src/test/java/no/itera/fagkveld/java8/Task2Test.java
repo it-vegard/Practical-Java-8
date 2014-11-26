@@ -4,6 +4,7 @@ import no.itera.fagkveld.java8.tasks.Task2;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
 
 public class Task2Test {
@@ -25,6 +26,7 @@ public class Task2Test {
 
     @Test
     public void testGetTeamsInAlphabeticalOrder() {
-        assertThat(Task2.getTeamsInAlphabeticalOrder(), equalTo(new String[]{"Aalesund", "Bodø Glimt", "Brann", "Haugesund", "Lillestrøm", "Molde", "Odd", "Rosenborg", "Sandnes Ulf", "Sarpsborg", "Sogndal", "Stabæk", "Start", "Strømsgodset", "Viking", "Vålerenga"}));
+        assertThat(Task2.getTeamsInAlphabeticalOrder(),
+                contains("Aalesund", "Bodø Glimt", "Brann", "Haugesund", "Lillestrøm", "Molde", "Odd", "Rosenborg", "Sandnes Ulf", "Sarpsborg", "Sogndal", "Stabæk", "Start", "Strømsgodset", "Viking", "Vålerenga"));
     }
 }
