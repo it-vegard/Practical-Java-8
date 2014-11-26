@@ -1,28 +1,19 @@
 package no.itera.fagkveld.java8;
 
+import no.itera.fagkveld.java8.tasks.Task3;
+import org.junit.Test;
+
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
-import no.itera.fagkveld.java8.tasks.Task3;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItems;
 
-public class Task3Test extends TestCase {
-
-	public Task3Test(String testName) {
-		super(testName);
-	}
-	
-	public static Test suite() {
-		return new TestSuite( Task3Test.class );
-	}
-	
-	public void testApp() {
-		getFilesNamesInDirectoryTest();
-	}
-	
-	public void getFilesNamesInDirectoryTest() {
-		assertTrue(Arrays.equals(new String[]{"File1.test", "File2.test", "File3.test"}, Task3.getFileNamesInDirectory(new File("./src/test/resources").getAbsolutePath())));
-	}
+public class Task3Test {
+    @Test
+    public void testGetFilesNamesInDirectory() {
+        assertThat(Arrays.asList(Task3.getFileNamesInDirectory(new File("./src/test/resources").getAbsolutePath())),
+                hasItems(Paths.get("File1.test"), Paths.get("File2.test"), Paths.get("File3.test")));
+    }
 }

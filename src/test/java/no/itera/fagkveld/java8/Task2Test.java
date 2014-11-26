@@ -1,46 +1,30 @@
 package no.itera.fagkveld.java8;
 
-import java.util.Arrays;
-
 import no.itera.fagkveld.java8.tasks.Task2;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
-public class Task2Test extends TestCase {
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
-	public Task2Test(String testName) {
-		super(testName);
-	}
-	
-	public static Test suite() {
-		return new TestSuite( Task2Test.class );
-	}
-	
-	public void testApp() {
-		getAverageNumberOfGoalsScoredInSeasonTest();
-		getTotalNumberOfGoalsScoredTest();
-		getGoldWinnerTest();
-		getTeamsInAlphabeticalOrderTest();
-	}
-	
-	public void getAverageNumberOfGoalsScoredInSeasonTest() {
-		assertEquals(45.9375, Task2.getAverageNumberOfGoalsScoredInSeason());
-	}
-	
-	public void getTotalNumberOfGoalsScoredTest() {
-		assertEquals(735, Task2.getTotalNumberOfGoalsScored());
-	}
-	
-	public void getGoldWinnerTest() {
-		assertEquals("Molde", Task2.getGoldWinner().getName());
-	}
-	
-	public void getTeamsInAlphabeticalOrderTest() {
-		Object[] teams = Task2.getTeamsInAlphabeticalOrder();
-		String[] correctOrder = new String[]{"Aalesund", "Bodø Glimt", "Brann", "Haugesund", "Lillestrøm", "Molde", "Odd", "Rosenborg", "Sandnes Ulf", "Sarpsborg", "Sogndal", "Stabæk", "Start", "Strømsgodset", "Viking", "Vålerenga"};
-		for(int i = 0; i < teams.length; i++) {
-			assertEquals(correctOrder[i], teams[i]);
-		}
-	}
+public class Task2Test {
+
+    @Test
+    public void testGetAverageNumberOfGoalsScoredInSeason() {
+        assertThat(Task2.getAverageNumberOfGoalsScoredInSeason(), equalTo(45.9375));
+    }
+
+    @Test
+    public void testGetTotalNumberOfGoalsScored() {
+        assertThat(Task2.getTotalNumberOfGoalsScored(), equalTo(735));
+    }
+
+    @Test
+    public void testGetGoldWinner() {
+        assertThat(Task2.getGoldWinner().getName(), equalTo("Molde"));
+    }
+
+    @Test
+    public void testGetTeamsInAlphabeticalOrder() {
+        assertThat(Task2.getTeamsInAlphabeticalOrder(), equalTo(new String[]{"Aalesund", "Bodø Glimt", "Brann", "Haugesund", "Lillestrøm", "Molde", "Odd", "Rosenborg", "Sandnes Ulf", "Sarpsborg", "Sogndal", "Stabæk", "Start", "Strømsgodset", "Viking", "Vålerenga"}));
+    }
 }
