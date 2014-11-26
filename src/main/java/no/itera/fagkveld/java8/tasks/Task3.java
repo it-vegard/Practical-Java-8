@@ -1,5 +1,7 @@
 package no.itera.fagkveld.java8.tasks;
 
+import java.util.List;
+
 public class Task3 {
 
 	/*
@@ -7,7 +9,7 @@ public class Task3 {
 	 * 
 	 * Hint: Child directories, etc. should not be included.
 	 */
-	public static Object[] getFileNamesInDirectory(String path) {
+	public static List<String> getFileNamesInDirectory(String path) {
 		return null;
 	}
 }

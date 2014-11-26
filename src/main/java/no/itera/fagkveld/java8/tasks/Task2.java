@@ -2,6 +2,8 @@ package no.itera.fagkveld.java8.tasks;
 
 import no.itera.fagkveld.java8.api.soccer.Team;
 
+import java.util.List;
+
 /*
  * In this class, use no.itera.fagkveld.java8.api.soccer.Tippeligaen.getTeams() to get the collection to base the Stream on
  */
@@ -33,7 +35,7 @@ public class Task2 {
 	/*
 	 * Return the names of the teams in (ascending) alphabetical order.
 	 */
-	public static Object[] getTeamsInAlphabeticalOrder() {
+	public static List<String> getTeamsInAlphabeticalOrder() {
 		return null;
 	}
 
